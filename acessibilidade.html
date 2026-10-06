@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Medidas de acessibilidade digital e física adotadas pelo Hortus para incluir pessoas com deficiência nas hortas comunitárias.">
+  <meta name="author" content="Equipe Raiz Digital — UNICID">
+  <meta name="theme-color" content="#287a4b">
+  <title>Acessibilidade — Hortus</title>
+  <link rel="icon" href="img/logo-hortus.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <header>
+    <div class="container nav">
+
+      <a href="index.html" class="logo" aria-label="Hortus — página inicial">
+        <span class="logo-icon" aria-hidden="true">&#127793;</span>
+        Hortus
+      </a>
+
+      <nav aria-label="Menu principal">
+        <ul class="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="impacto.html">Impacto</a></li>
+          <li><a href="acessibilidade.html" aria-current="page">Acessibilidade</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li><a href="midia.html">Mídia</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="orcamento_hospedagem.html">Hospedagem</a></li>
+        </ul>
+      </nav>
+
+      <a href="projetos.html" class="nav-button">Encontrar uma horta &rarr;</a>
+
+    </div>
+  </header>
+
+
+  <main id="conteudo">
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Início</a> <span aria-hidden="true">&rsaquo;</span> Acessibilidade</p>
+        <h1>Acessibilidade e inclusão</h1>
+        <p>Acessibilidade não é um ajuste final: é o ponto de partida do Hortus, no site e no canteiro.</p>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="container">
+        <div class="section-heading">
+          <span class="label">No site</span>
+          <h2>O que fizemos nesta plataforma</h2>
+          <p>
+            Medidas aplicadas em todas as 10 páginas, orientadas pelas WCAG 2.1
+            (nível AA) e pela eMAG, a versão brasileira do modelo de acessibilidade
+            para governo eletrônico.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+
+          <article class="feature-card">
+            <div>
+              <div class="feature-icon" aria-hidden="true">&#9000;</div>
+              <h3>Navegação por teclado</h3>
+              <p>
+                Toda a interface é operável apenas com Tab, Shift+Tab e Enter. O foco é
+                sempre visível, com contorno de 4 px em terracota sobre fundo claro.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div>
+              <div class="feature-icon" aria-hidden="true">&#8593;</div>
+              <h3>Pular para o conteúdo</h3>
+              <p>
+                O primeiro elemento de cada página é um link que salta o menu e leva
+                direto ao conteúdo principal, visível assim que recebe foco.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div>
+              <div class="feature-icon" aria-hidden="true">&#128173;</div>
+              <h3>Texto alternativo</h3>
+              <p>
+                Todas as imagens informativas têm alt descritivo. Ícones decorativos
+                usam aria-hidden para não poluir a leitura do leitor de tela.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div>
+              <div class="feature-icon" aria-hidden="true">&#127912;</div>
+              <h3>Contraste</h3>
+              <p>
+                Texto quase preto (#171a16) sobre fundos claros. Todas as combinações
+                ficam acima do mínimo AA de 4,5:1 — a menor delas mede 5,28:1.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div>
+              <div class="feature-icon" aria-hidden="true">&#127916;</div>
+              <h3>Mídia com legenda</h3>
+              <p>
+                O vídeo institucional traz faixa de legendas em português (WebVTT) e
+                transcrição em texto. O áudio tem descrição escrita equivalente.
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div>
+              <div class="feature-icon" aria-hidden="true">&#128220;</div>
+              <h3>Semântica e idioma</h3>
+              <p>
+                HTML5 semântico (header, nav, main, section, article, footer),
+                hierarquia de títulos sem saltos e lang="pt-BR" em todas as páginas.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section-cream">
+      <div class="container">
+        <div class="section-heading">
+          <span class="label">No canteiro</span>
+          <h2>Acessibilidade física nas hortas</h2>
+          <p>
+            Recomendações que o Hortus distribui às comunidades, baseadas na
+            NBR 9050 de acessibilidade a edificações e espaços urbanos.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="box box-green">
+            <h3>Canteiros elevados</h3>
+            <p>
+              Altura de 85 cm com vão livre inferior de 70 cm, permitindo aproximação
+              frontal de cadeira de rodas. Largura máxima de 60 cm quando o acesso é
+              por um lado só, para que todo o canteiro fique ao alcance das mãos.
+            </p>
+          </article>
+
+          <article class="box box-yellow">
+            <h3>Circulação</h3>
+            <p>
+              Corredores de 1,20 m entre canteiros e área de retorno de 1,50 m nas
+              extremidades. Piso firme, regular e antiderrapante, sem degraus isolados.
+            </p>
+          </article>
+
+          <article class="box box-blue">
+            <h3>Identificação tátil</h3>
+            <p>
+              Placas em alto-relevo e braile em cada canteiro, com nome da cultura e
+              mês de plantio. Plantas aromáticas nas pontas funcionam como referência
+              de orientação para pessoas cegas.
+            </p>
+          </article>
+
+          <article class="box box-cream">
+            <h3>Ferramentas adaptadas</h3>
+            <p>
+              Cabos alongados e com empunhadura engrossada, regadores de menor volume e
+              bancos móveis para quem não pode permanecer em pé por longos períodos.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section-white">
+      <div class="container">
+        <div class="section-heading">
+          <span class="label">Compromisso</span>
+          <h2>Como testamos e o que falta</h2>
+        </div>
+
+        <div class="prose">
+          <h3>Testes já realizados</h3>
+          <ul>
+            <li>Navegação completa por teclado nas 10 páginas, verificando ordem de foco.</li>
+            <li>Verificação de contraste de todas as combinações de cor da paleta.</li>
+            <li>Leitura das páginas com o leitor de tela NVDA em português.</li>
+            <li>Validação do HTML no W3C Markup Validation Service.</li>
+          </ul>
+
+          <h3>Limitações conhecidas desta versão</h3>
+          <ul>
+            <li>Ainda não há seletor de alto contraste nem de aumento de fonte na interface.</li>
+            <li>O mapa incorporado de terceiros depende da acessibilidade do próprio serviço.</li>
+            <li>A audiodescrição do vídeo institucional está prevista para a entrega final.</li>
+          </ul>
+
+          <p>
+            Encontrou uma barreira? Escreva para
+            <a href="mailto:acessibilidade@hortus.org.br">acessibilidade@hortus.org.br</a>
+            ou use o <a href="contato.html">formulário de contato</a>. Toda barreira
+            relatada entra na lista de correções da próxima versão.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-icon" aria-hidden="true">&#127793;</span>
+            Hortus
+          </div>
+          <p>
+            Plataforma para criação e gerenciamento de hortas comunitárias
+            agroecológicas. Projeto acadêmico da disciplina de Front-End — UNICID.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Explorar</h3>
+          <a href="projetos.html">Projetos</a>
+          <a href="impacto.html">Impacto</a>
+          <a href="galeria.html">Galeria</a>
+          <a href="midia.html">Mídia</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Comunidade</h3>
+          <a href="sobre.html">Sobre o Hortus</a>
+          <a href="noticias.html">Notícias</a>
+          <a href="acessibilidade.html">Acessibilidade</a>
+          <a href="contato.html">Contato</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Projeto</h3>
+          <a href="orcamento_hospedagem.html">Hospedagem e domínio</a>
+          <a href="docs/README.md">Documentação</a>
+          <a href="contato.html#equipe">Equipe</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Hortus — Cultive junto. Colha comunidade.</span>
+        <span>Conteúdo autoral produzido para fins acadêmicos (UNICID).</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+</body>
+</html>

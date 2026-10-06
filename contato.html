@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fale com a equipe do Hortus: formulário de contato validado, endereços das hortas piloto e integrantes do projeto.">
+  <meta name="author" content="Equipe Raiz Digital — UNICID">
+  <meta name="theme-color" content="#287a4b">
+  <title>Contato — Hortus</title>
+  <link rel="icon" href="img/logo-hortus.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <header>
+    <div class="container nav">
+
+      <a href="index.html" class="logo" aria-label="Hortus — página inicial">
+        <span class="logo-icon" aria-hidden="true">&#127793;</span>
+        Hortus
+      </a>
+
+      <nav aria-label="Menu principal">
+        <ul class="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="impacto.html">Impacto</a></li>
+          <li><a href="acessibilidade.html">Acessibilidade</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li><a href="midia.html">Mídia</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="contato.html" aria-current="page">Contato</a></li>
+          <li><a href="orcamento_hospedagem.html">Hospedagem</a></li>
+        </ul>
+      </nav>
+
+      <a href="projetos.html" class="nav-button">Encontrar uma horta &rarr;</a>
+
+    </div>
+  </header>
+
+
+  <main id="conteudo">
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Início</a> <span aria-hidden="true">&rsaquo;</span> Contato</p>
+        <h1>Contato</h1>
+        <p>Quer cadastrar uma horta, participar de um mutirão ou relatar uma barreira de acessibilidade? Fale com a gente.</p>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="container grid-2">
+
+        <div>
+          <h2>Formulário de contato</h2>
+          <p style="margin:12px 0 24px; max-width:60ch;">
+            Os campos marcados com <span class="required-mark" aria-hidden="true">*</span>
+            são obrigatórios. A validação é feita pelo próprio navegador, com os
+            recursos nativos do HTML5.
+          </p>
+
+          <p id="form-aviso" class="box box-green" role="status">
+            Esta é a versão MVP do site: o formulário é validado no navegador, mas
+            ainda não envia os dados a um servidor.
+          </p>
+
+          <form id="form-contato" action="#" method="get" style="margin-top:24px;">
+
+            <div class="form-grid">
+
+              <div class="form-field">
+                <label for="nome">Nome completo <span class="required-mark" aria-hidden="true">*</span></label>
+                <input type="text" id="nome" name="nome" required minlength="5" maxlength="80"
+                       autocomplete="name" placeholder="Maria Aparecida Silva"
+                       aria-describedby="dica-nome">
+                <span class="hint" id="dica-nome">Mínimo de 5 caracteres.</span>
+              </div>
+
+              <div class="form-field">
+                <label for="email">E-mail <span class="required-mark" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" required
+                       autocomplete="email" placeholder="voce@exemplo.com.br"
+                       aria-describedby="dica-email">
+                <span class="hint" id="dica-email">Usaremos apenas para responder.</span>
+              </div>
+
+              <div class="form-field">
+                <label for="telefone">Telefone com DDD <span class="required-mark" aria-hidden="true">*</span></label>
+                <input type="tel" id="telefone" name="telefone" required
+                       pattern="\(\d{2}\)\s?\d{4,5}-\d{4}"
+                       placeholder="(11) 98888-7777" autocomplete="tel"
+                       aria-describedby="dica-telefone">
+                <span class="hint" id="dica-telefone">Formato: (11) 98888-7777</span>
+              </div>
+
+              <div class="form-field">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" name="cep" pattern="\d{5}-?\d{3}"
+                       placeholder="03071-000" autocomplete="postal-code"
+                       aria-describedby="dica-cep">
+                <span class="hint" id="dica-cep">Formato: 03071-000</span>
+              </div>
+
+              <div class="form-field">
+                <label for="assunto">Assunto <span class="required-mark" aria-hidden="true">*</span></label>
+                <select id="assunto" name="assunto" required>
+                  <option value="">Selecione uma opção</option>
+                  <option value="cadastrar-horta">Quero cadastrar uma horta</option>
+                  <option value="participar">Quero participar de um mutirão</option>
+                  <option value="doar">Quero doar materiais ou sementes</option>
+                  <option value="acessibilidade">Relatar barreira de acessibilidade</option>
+                  <option value="imprensa">Imprensa e parcerias</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="data-visita">Data pretendida de visita</label>
+                <input type="date" id="data-visita" name="data_visita"
+                       min="2026-09-22" max="2027-12-31"
+                       aria-describedby="dica-data">
+                <span class="hint" id="dica-data">Mutirões acontecem aos sábados.</span>
+              </div>
+
+              <div class="form-field">
+                <label for="pessoas">Quantas pessoas viriam com você?</label>
+                <input type="number" id="pessoas" name="pessoas" min="1" max="40" step="1"
+                       placeholder="1" aria-describedby="dica-pessoas">
+                <span class="hint" id="dica-pessoas">De 1 a 40 pessoas por grupo.</span>
+              </div>
+
+              <div class="form-field">
+                <label for="horta">Horta de interesse</label>
+                <select id="horta" name="horta">
+                  <option value="">Sem preferência</option>
+                  <option value="vila-verde">Horta Comunitária Vila Verde (São Paulo)</option>
+                  <option value="escola-esperanca">Horta Escola Esperança (Campinas)</option>
+                  <option value="horta-bairro">Horta do Bairro (Santos)</option>
+                </select>
+              </div>
+
+              <div class="form-field full">
+                <label for="mensagem">Mensagem <span class="required-mark" aria-hidden="true">*</span></label>
+                <textarea id="mensagem" name="mensagem" required minlength="20" maxlength="1200"
+                          placeholder="Conte como você gostaria de participar."
+                          aria-describedby="dica-mensagem"></textarea>
+                <span class="hint" id="dica-mensagem">Entre 20 e 1200 caracteres.</span>
+              </div>
+
+              <div class="form-field full">
+                <fieldset>
+                  <legend>Recursos de acessibilidade</legend>
+                  <p class="hint" style="margin-bottom:8px;">
+                    Opcional. Ajuda a preparar a visita — a informação é usada apenas
+                    para organizar o atendimento no dia.
+                  </p>
+
+                  <div class="check-row">
+                    <input type="checkbox" id="acess-libras" name="acessibilidade" value="libras">
+                    <label for="acess-libras">Preciso de intérprete de Libras</label>
+                  </div>
+
+                  <div class="check-row">
+                    <input type="checkbox" id="acess-canteiro" name="acessibilidade" value="canteiro-elevado">
+                    <label for="acess-canteiro">Preciso de canteiro elevado acessível</label>
+                  </div>
+
+                  <div class="check-row">
+                    <input type="checkbox" id="acess-material" name="acessibilidade" value="material-ampliado">
+                    <label for="acess-material">Preciso de material impresso ampliado ou em braile</label>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="form-field full">
+                <div class="check-row">
+                  <input type="checkbox" id="boletim" name="boletim" value="sim">
+                  <label for="boletim">Quero receber o boletim mensal da rede Hortus</label>
+                </div>
+
+                <div class="check-row">
+                  <input type="checkbox" id="termos" name="termos" value="sim" required>
+                  <label for="termos">
+                    Concordo com o uso dos meus dados para retorno deste contato
+                    <span class="required-mark" aria-hidden="true">*</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-field full">
+                <button type="submit" class="button button-primary">Enviar mensagem &rarr;</button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+
+        <aside aria-labelledby="titulo-dados">
+          <h2 id="titulo-dados">Onde nos encontrar</h2>
+
+          <div class="box box-yellow" style="margin:16px 0 22px;">
+            <h3>Secretaria da rede</h3>
+            <address style="font-style:normal; font-size:.92rem; line-height:1.8;">
+              Rua das Acácias, 214 — Vila Verde<br>
+              São Paulo — SP, 05432-010<br>
+              Telefone: <a href="tel:+551140028922">(11) 4002-8922</a><br>
+              E-mail: <a href="mailto:contato@hortus.org.br">contato@hortus.org.br</a>
+            </address>
+          </div>
+
+          <div class="box box-blue" style="margin-bottom:22px;">
+            <h3>Hortas piloto</h3>
+            <p style="font-size:.9rem; line-height:1.8;">
+              <strong>Vila Verde</strong><br>Av. dos Canteiros, 1.500 — São Paulo/SP<br><br>
+              <strong>Escola Esperança</strong><br>Rua do Sabiá, 77 — Campinas/SP<br><br>
+              <strong>Horta do Bairro</strong><br>Rua da Maré, 320 — Santos/SP
+            </p>
+          </div>
+
+          <div class="box box-cream">
+            <h3>Horário de atendimento</h3>
+            <p style="font-size:.9rem;">
+              Segunda a sexta, das 9h às 17h.<br>
+              Mutirões: sábados, das 8h às 12h.
+            </p>
+            <p class="hint" style="margin-top:12px;">
+              Todos os dados de contato desta página são fictícios, criados para
+              fins acadêmicos.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+
+    <section class="section-cream" id="equipe">
+      <div class="container">
+        <div class="section-heading">
+          <span class="label">Quem faz</span>
+          <h2>Integrantes do projeto</h2>
+          <p>Equipe Raiz Digital — Curso Superior de Informática, disciplina de Front-End, UNICID.</p>
+        </div>
+
+        <div class="team-grid">
+
+          <article class="team-card">
+            <h3>Vinícius Dias Gomes</h3>
+            <p>RGM 47441081</p>
+            <p style="margin-top:10px;">Arquitetura do site, HTML semântico e integração final.</p>
+          </article>
+
+          <article class="team-card">
+            <h3>Guilherme de Souza Lopes dos Santos</h3>
+            <p>RGM 47475609</p>
+            <p style="margin-top:10px;">CSS, identidade visual neobrutalista e responsividade.</p>
+          </article>
+
+          <article class="team-card">
+            <h3>Valquíria Rodrigues de Macedo</h3>
+            <p>RGM 47415061</p>
+            <p style="margin-top:10px;">Conteúdo, acessibilidade e testes com leitor de tela.</p>
+          </article>
+
+          <article class="team-card">
+            <h3>Pablo Henrique Lourenço Guimarães</h3>
+            <p>RGM 47672285</p>
+            <p style="margin-top:10px;">Mídia, orçamento de hospedagem e documentação.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-icon" aria-hidden="true">&#127793;</span>
+            Hortus
+          </div>
+          <p>
+            Plataforma para criação e gerenciamento de hortas comunitárias
+            agroecológicas. Projeto acadêmico da disciplina de Front-End — UNICID.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Explorar</h3>
+          <a href="projetos.html">Projetos</a>
+          <a href="impacto.html">Impacto</a>
+          <a href="galeria.html">Galeria</a>
+          <a href="midia.html">Mídia</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Comunidade</h3>
+          <a href="sobre.html">Sobre o Hortus</a>
+          <a href="noticias.html">Notícias</a>
+          <a href="acessibilidade.html">Acessibilidade</a>
+          <a href="contato.html">Contato</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Projeto</h3>
+          <a href="orcamento_hospedagem.html">Hospedagem e domínio</a>
+          <a href="docs/README.md">Documentação</a>
+          <a href="contato.html#equipe">Equipe</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Hortus — Cultive junto. Colha comunidade.</span>
+        <span>Conteúdo autoral produzido para fins acadêmicos (UNICID).</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+</body>
+</html>
