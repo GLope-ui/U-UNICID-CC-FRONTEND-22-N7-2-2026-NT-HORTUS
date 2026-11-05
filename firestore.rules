@@ -1,0 +1,172 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function verifiedUser() {
+      return signedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isAdmin() {
+      return signedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    function ownsPublishedGarden(gardenId, uid) {
+      return exists(/databases/$(database)/documents/gardens/$(gardenId))
+        && get(/databases/$(database)/documents/gardens/$(gardenId)).data.ownerId == uid
+        && get(/databases/$(database)/documents/gardens/$(gardenId)).data.status == 'published';
+    }
+
+    function validPlantingAnnouncement() {
+      return request.resource.data.keys().hasAll([
+          'gardenId', 'crop', 'stage', 'expectedHarvest', 'notes', 'ownerId', 'status', 'createdAt'
+        ])
+        && request.resource.data.keys().hasOnly([
+          'gardenId', 'crop', 'stage', 'expectedHarvest', 'notes', 'ownerId', 'status', 'createdAt',
+          'reviewedAt', 'reviewedBy'
+        ])
+        && request.resource.data.gardenId is string
+        && request.resource.data.crop is string
+        && request.resource.data.crop.size() >= 2
+        && request.resource.data.crop.size() <= 50
+        && request.resource.data.stage in ['plantando', 'crescendo', 'colheita']
+        && request.resource.data.expectedHarvest is string
+        && request.resource.data.expectedHarvest.matches('^([0-9]{4}-(0[1-9]|1[0-2])|)$')
+        && request.resource.data.notes is string
+        && request.resource.data.notes.size() <= 240;
+    }
+
+    function validGarden() {
+      return request.resource.data.keys().hasAll([
+          'name', 'city', 'state', 'neighborhood', 'description', 'activities',
+          'accessibility', 'contactUrl', 'ownerId', 'status', 'createdAt'
+        ])
+        && request.resource.data.keys().hasOnly([
+          'name', 'city', 'state', 'neighborhood', 'description', 'activities',
+          'accessibility', 'contactUrl', 'ownerId', 'status', 'createdAt',
+          'reviewedAt', 'reviewedBy'
+        ])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() >= 2
+        && request.resource.data.name.size() <= 80
+        && request.resource.data.city is string
+        && request.resource.data.city.size() >= 2
+        && request.resource.data.city.size() <= 80
+        && request.resource.data.state is string
+        && request.resource.data.state.matches('^[A-Z]{2}$')
+        && request.resource.data.neighborhood is string
+        && request.resource.data.neighborhood.size() <= 80
+        && request.resource.data.description is string
+        && request.resource.data.description.size() >= 20
+        && request.resource.data.description.size() <= 500
+        && request.resource.data.activities is list
+        && request.resource.data.activities.size() >= 1
+        && request.resource.data.activities.size() <= 5
+        && request.resource.data.activities.hasOnly([
+          'Cultivo', 'Compostagem', 'Oficinas', 'Mutirões', 'Troca de sementes'
+        ])
+        && request.resource.data.accessibility is string
+        && request.resource.data.accessibility.size() >= 10
+        && request.resource.data.accessibility.size() <= 300
+        && request.resource.data.contactUrl is string
+        && request.resource.data.contactUrl.size() <= 300
+        && (request.resource.data.contactUrl == '' || request.resource.data.contactUrl.matches('^https://.*'));
+    }
+
+    match /admins/{uid} {
+      allow get: if signedIn() && request.auth.uid == uid;
+      allow list, create, update, delete: if false;
+    }
+
+    match /gardens/{gardenId} {
+      allow get, list: if resource.data.status == 'published'
+        || (signedIn() && resource.data.ownerId == request.auth.uid)
+        || isAdmin();
+
+      allow create: if verifiedUser()
+        && validGarden()
+        && request.resource.data.ownerId == request.auth.uid
+        && request.resource.data.status == 'pending'
+        && request.resource.data.createdAt == request.time
+        && !('reviewedAt' in request.resource.data)
+        && !('reviewedBy' in request.resource.data);
+
+      allow update: if isAdmin()
+        && resource.data.status == 'pending'
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'status', 'reviewedAt', 'reviewedBy'
+        ])
+        && request.resource.data.status in ['published', 'rejected']
+        && request.resource.data.reviewedAt == request.time
+        && request.resource.data.reviewedBy == request.auth.uid;
+
+      allow delete: if signedIn()
+        && resource.data.ownerId == request.auth.uid
+        && resource.data.status == 'pending';
+    }
+
+    match /plantingAnnouncements/{announcementId} {
+      allow get, list: if resource.data.status == 'published'
+        || (signedIn() && resource.data.ownerId == request.auth.uid)
+        || isAdmin();
+
+      allow create: if verifiedUser()
+        && validPlantingAnnouncement()
+        && request.resource.data.ownerId == request.auth.uid
+        && request.resource.data.status == 'pending'
+        && request.resource.data.createdAt == request.time
+        && !('reviewedAt' in request.resource.data)
+        && !('reviewedBy' in request.resource.data)
+        && ownsPublishedGarden(request.resource.data.gardenId, request.auth.uid);
+
+      allow update: if isAdmin()
+        && resource.data.status == 'pending'
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'status', 'reviewedAt', 'reviewedBy'
+        ])
+        && request.resource.data.status in ['published', 'rejected']
+        && request.resource.data.reviewedAt == request.time
+        && request.resource.data.reviewedBy == request.auth.uid;
+
+      allow delete: if signedIn()
+        && resource.data.ownerId == request.auth.uid
+        && resource.data.status == 'pending';
+    }
+
+    match /contactMessages/{messageId} {
+      allow get, list: if (signedIn() && resource.data.userId == request.auth.uid) || isAdmin();
+
+      allow create: if verifiedUser()
+        && request.resource.data.keys().hasAll([
+          'userId', 'senderName', 'senderEmail', 'subject', 'message', 'status', 'createdAt'
+        ])
+        && request.resource.data.keys().hasOnly([
+          'userId', 'senderName', 'senderEmail', 'subject', 'message', 'status', 'createdAt'
+        ])
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.senderEmail == request.auth.token.email
+        && request.resource.data.senderName is string
+        && request.resource.data.senderName.size() <= 80
+        && request.resource.data.subject is string
+        && request.resource.data.subject.size() >= 2
+        && request.resource.data.subject.size() <= 100
+        && request.resource.data.message is string
+        && request.resource.data.message.size() >= 10
+        && request.resource.data.message.size() <= 2000
+        && request.resource.data.status == 'new'
+        && request.resource.data.createdAt == request.time;
+
+      allow update: if isAdmin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'status', 'handledAt', 'handledBy'
+        ])
+        && request.resource.data.status == 'closed'
+        && request.resource.data.handledAt == request.time
+        && request.resource.data.handledBy == request.auth.uid;
+
+      allow delete: if false;
+    }
+  }
+}

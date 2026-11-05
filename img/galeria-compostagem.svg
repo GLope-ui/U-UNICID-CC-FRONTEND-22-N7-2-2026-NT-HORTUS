@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-labelledby="title desc">
+  <title id="title">Compostagem no ciclo do cultivo</title><desc id="desc">Composteira de madeira com folhas e solo fértil em três camadas.</desc>
+  <rect width="800" height="560" fill="#e9efdf"/><path d="M0 432c126-44 246-48 394-4s274 55 406 2v130H0z" fill="#b8c98f"/><circle cx="661" cy="117" r="69" fill="#ffed52"/>
+  <path d="M211 184h378v286H211z" fill="#b87846"/><path d="M211 184h378v25H211z" fill="#8e5533"/><path d="M211 277h378v23H211z" fill="#8e5533"/><path d="M211 370h378v23H211z" fill="#8e5533"/>
+  <path d="M230 214h340v53H230z" fill="#7cae61"/><path d="M230 302h340v62H230z" fill="#6c5638"/><path d="M230 397h340v60H230z" fill="#493d2d"/>
+  <path d="M302 244c-24-32-18-59 7-75 32 13 41 42-7 75Zm96 5c-7-41 12-63 43-65 18 27 9 56-43 65Zm90-6c9-37 33-52 61-41 9 33-7 56-61 41Z" fill="#d3e57b"/><path d="M300 332c25-23 47-18 54 5-19 21-39 20-54-5Zm87-5c21-31 46-29 57-9-13 27-35 33-57 9Zm91 18c13-32 37-37 55-20-5 29-26 41-55 20Z" fill="#b2854e"/>
+  <path d="M269 457v29m84-29v29m84-29v29m84-29v29" stroke="#e5c397" stroke-width="8" stroke-linecap="round"/><path d="M148 180c-17-21-12-41 7-52 23 12 28 31-7 52Zm49-24c5-23 23-33 42-23 3 21-10 34-42 23Z" fill="#287a4b"/><path d="M628 365c22-27 49-27 63-7-14 28-37 38-63 7Z" fill="#287a4b"/>
+</svg>

@@ -1,0 +1,16 @@
+{
+  "name": "hortus",
+  "version": "1.0.0",
+  "description": "Hortus — cultivo comunitário, participação e planejamento de hortas.",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./css/style.css --minify",
+    "dev": "tailwindcss -i ./src/input.css -o ./css/style.css --watch",
+    "serve": "node server.js"
+  },
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

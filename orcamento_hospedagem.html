@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare opções de hospedagem e domínio para publicar o site Hortus.">
+  <meta name="theme-color" content="#122315">
+  <title>Orçamento de hospedagem e domínio — Hortus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+  <script type="module" src="js/site.mjs"></script>
+</head>
+<body data-page="budget">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="top">
+  <div class="topline">
+    <a class="brand" href="index.html" aria-label="Hortus, início"><span class="brandmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v20M3.34 7l17.32 10M3.34 17 20.66 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/></svg></span> <span>Hortus</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+  <nav id="menu" aria-label="Navegação principal">
+    <ul><li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre</a></li><li><a href="projetos.html">Projetos</a></li><li><a href="impacto.html">Impacto</a></li><li><a href="acessibilidade.html">Acessibilidade</a></li><li><a href="galeria.html">Galeria</a></li><li><a href="midia.html">Mídia</a></li><li><a href="noticias.html">Notícias</a></li><li><a href="contato.html">Contato</a></li><li><a href="orcamento_hospedagem.html" aria-current="page">Orçamento</a></li><li><a href="buscar-hortas.html">Buscar hortas</a></li><li><a href="criar-horta.html">Criar horta</a></li></ul>
+    <div class="account-links" data-auth-guest>
+      <a href="entrar.html">Entrar</a>
+      <a class="create-link" href="cadastro.html">Criar conta</a>
+    </div>
+    <div class="account-links" data-auth-user hidden>
+      <span class="account-name" data-user-label></span>
+      <a class="create-link" href="painel.html">Minha conta</a>
+      <button class="signout-link" type="button" data-signout>Sair</button>
+    </div>
+  </nav>
+</header>
+<main id="conteudo">
+  <section class="hero hero--budget">
+    <div class="hero-copy">
+      <p class="eyebrow">HORTUS · PLANEJAMENTO DIGITAL</p>
+      <h1>Compare hospedagem e domínio</h1>
+      <p class="lead">Veja opções para manter o site acessível, com custos e limites apresentados com clareza.</p>
+      <a class="button hero-cta" href="#comparativo-hospedagem">Ver comparativo <span aria-hidden="true">↘</span></a>
+    </div>
+    <figure class="hero-art"><img src="img/galeria-cultivo.svg" alt="Ilustração de plantas crescendo em um canteiro comunitário" width="1200" height="800" fetchpriority="high"><figcaption>Um site leve também pode apoiar uma iniciativa sustentável</figcaption></figure>
+  </section>
+  <section class="intro">
+    <div><p class="eyebrow">ORÇAMENTO</p><h2>Escolha conforme o que o site precisa</h2></div>
+    <div><p>As referências abaixo consideram um site estático com páginas, imagens e mídia. Planos e disponibilidade podem mudar; confirme os valores e as condições nos sites dos provedores antes de contratar.</p></div>
+  </section>
+  <section class="budget-comparison" id="comparativo-hospedagem" aria-labelledby="hosting-title">
+    <div class="section-heading"><p class="eyebrow">HOSPEDAGEM</p><h2 id="hosting-title">Três opções para publicar</h2><p>Consulta de referência: 26 de outubro de 2026. Valores sujeitos a alteração.</p></div>
+    <div class="table-wrap"><table><caption>Comparativo de hospedagem para sites</caption><thead><tr><th scope="col">Serviço</th><th scope="col">Plano</th><th scope="col">Referência de preço</th><th scope="col">Quando considerar</th></tr></thead><tbody><tr><th scope="row"><a href="https://pages.github.com/" target="_blank" rel="noreferrer">GitHub Pages</a></th><td>Estático</td><td>R$ 0</td><td>Site composto por páginas estáticas; opção recomendada para esta versão.</td></tr><tr><th scope="row"><a href="https://www.netlify.com/pricing/" target="_blank" rel="noreferrer">Netlify</a></th><td>Free</td><td>US$ 0; 300 créditos mensais</td><td>Publicação contínua de sites estáticos; confira limites e regras de uso.</td></tr><tr><th scope="row"><a href="https://railway.com/pricing" target="_blank" rel="noreferrer">Railway</a></th><td>Hobby</td><td>US$ 5/mês de uso mínimo, com US$ 5 em créditos</td><td>Considere quando precisar hospedar serviços além de arquivos estáticos.</td></tr></tbody></table></div>
+  </section>
+  <section class="budget-comparison" aria-labelledby="domain-title">
+    <div class="section-heading"><p class="eyebrow">DOMÍNIO</p><h2 id="domain-title">Três endereços possíveis</h2><p>Preço de referência do Registro.br para domínios brasileiros: R$ 40 por ano; confirme disponibilidade e regras de cada categoria.</p></div>
+    <div class="table-wrap"><table><caption>Opções de domínio para o Hortus</caption><thead><tr><th scope="col">Endereço sugerido</th><th scope="col">Preço de referência</th><th scope="col">Observação</th></tr></thead><tbody><tr><th scope="row">hortus.com.br</th><td>R$ 40/ano</td><td>Endereço conhecido e fácil de compartilhar; verificar disponibilidade.</td></tr><tr><th scope="row">hortus.org.br</th><td>R$ 40/ano</td><td>Verificar requisitos aplicáveis à categoria e disponibilidade.</td></tr><tr><th scope="row">hortus.eco.br</th><td>R$ 40/ano</td><td>Verificar regras da categoria e disponibilidade no Registro.br.</td></tr></tbody></table></div>
+  </section>
+  <aside class="budget-recommendation"><p class="eyebrow">RECOMENDAÇÃO</p><h2>Comece simples</h2><p>Para as páginas atuais, GitHub Pages com um domínio disponível é uma opção de baixo custo. Reavalie a hospedagem se as necessidades do site mudarem.</p><p>Fontes: <a href="https://pages.github.com/" target="_blank" rel="noreferrer">GitHub Pages</a>, <a href="https://www.netlify.com/pricing/" target="_blank" rel="noreferrer">Netlify</a>, <a href="https://railway.com/pricing" target="_blank" rel="noreferrer">Railway</a> e <a href="https://registro.br/dominio/" target="_blank" rel="noreferrer">Registro.br</a>.</p></aside>
+</main>
+<footer class="footer">
+  <a class="brand" href="index.html" aria-label="Hortus, início"><span class="brandmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v20M3.34 7l17.32 10M3.34 17 20.66 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/></svg></span> <span>Hortus</span></a>
+  <p>Cultive junto. Colha comunidade.</p>
+  <nav class="footnav" aria-label="Todas as páginas"><a href="index.html">Início</a><a href="sobre.html">Sobre</a><a href="projetos.html">Projetos</a><a href="impacto.html">Impacto</a><a href="acessibilidade.html">Acessibilidade</a><a href="galeria.html">Galeria</a><a href="midia.html">Mídia</a><a href="noticias.html">Notícias</a><a href="contato.html">Contato</a><a href="orcamento_hospedagem.html">Orçamento</a><a href="buscar-hortas.html">Buscar hortas</a><a href="criar-horta.html">Criar horta</a></nav>
+</footer>
+</body>
+</html>
