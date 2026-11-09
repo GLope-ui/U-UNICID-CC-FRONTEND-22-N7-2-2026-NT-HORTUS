@@ -2,182 +2,110 @@
 
 **Cultive junto. Colha comunidade.**
 
-Plataforma online de criação e gerenciamento de hortas comunitárias, desenvolvida pela equipe **Raiz Digital** como projeto acadêmico (Entrega 01: site completo em HTML + CSS).
+Hortus é um projeto acadêmico de diretório de hortas comunitárias. A proposta é ajudar visitantes a descobrir iniciativas, conhecer o que cada horta oferece e encontrar formas de participar. Responsáveis podem criar e manter o perfil público da própria horta.
 
-> 🔗 Endereço previsto: `hortus.eco.br`
+> **Site público:** [Hortus no GitHub Pages](https://glope-ui.github.io/U-UNICID-CC-FRONTEND-22-N7-2-2026-NT-HORTUS/). O endereço já responde publicamente; a atualização desta versão depende da conclusão do merge em `main` e do próximo deploy automático do Pages. O projeto não depende de domínio próprio.
 
----
+**Repositório:** [GLope-ui/U-UNICID-CC-FRONTEND-22-N7-2-2026-NT-HORTUS](https://github.com/GLope-ui/U-UNICID-CC-FRONTEND-22-N7-2-2026-NT-HORTUS)
 
-## Sobre o projeto
+## Propósito e público
 
-Hortas comunitárias urbanas ajudam o meio ambiente e a vida em comunidade ao mesmo tempo. O problema quase nunca é a terra ou a vontade de participar: é a **gestão**. Em visitas a três hortas da Grande São Paulo, a equipe viu sempre o mesmo cenário: escala de tarefas em caderno, lista de participantes em grupo de mensagens e registro de colheita em folhas soltas.
+O diretório atende pessoas que procuram uma horta para visitar ou apoiar, responsáveis por hortas comunitárias, educadores e grupos locais. O projeto se relaciona tematicamente com os Objetivos de Desenvolvimento Sustentável 2 (Fome Zero e Agricultura Sustentável), 11 (Cidades e Comunidades Sustentáveis) e 12 (Consumo e Produção Responsáveis). Essa relação descreve o propósito do projeto; não representa impacto quantitativo medido.
 
-O Hortus propõe uma interface web que torna **pública e mensurável** a produção de alimento, o desvio de resíduo do aterro e a participação das pessoas.
+## Páginas
 
-O projeto dialoga com os Objetivos de Desenvolvimento Sustentável da ONU:
+O site contém dez páginas HTML:
 
-- **ODS 2:** Fome zero e agricultura sustentável
-- **ODS 11:** Cidades e comunidades sustentáveis
-- **ODS 12:** Consumo e produção responsáveis
-
-## Público-alvo
-
-| Perfil | Necessidade principal |
-|---|---|
-| Organizadores de horta | Registrar canteiros, escalar mutirões e comprovar resultados |
-| Voluntários e vizinhos | Descobrir a horta mais próxima e saber como participar |
-| Educadores | Usar a horta como conteúdo de aula |
-| Poder público e parceiros | Consultar dados de impacto antes de apoiar |
-| Pessoas com deficiência (**público prioritário**) | Acessar o conteúdo sem barreiras e encontrar hortas acessíveis |
-
-## Páginas do site
-
-| # | Página | Função |
+| Página | Arquivo | Conteúdo |
 |---|---|---|
-| 1 | `index.html` | Apresentação, menu principal, vitrine das hortas e resumo do impacto |
-| 2 | `sobre.html` | História, missão, visão, valores e como funciona |
-| 3 | `projetos.html` | Hortas piloto, quatro programas e agenda de atividades |
-| 4 | `impacto.html` | Dados e tabelas de produção, destino da colheita |
-| 5 | `acessibilidade.html` | Medidas de inclusão no site e no canteiro |
-| 6 | `galeria.html` | Nove ilustrações autorais com legenda e fonte |
-| 7 | `midia.html` | Vídeo com legendas, vinheta em áudio e mapa |
-| 8 | `noticias.html` | Cinco notícias, boletim e sugestões de leitura |
-| 9 | `contato.html` | Formulário validado, contatos, endereços e equipe |
-| 10 | `orcamento_hospedagem.html` | Comparativo de 3 hospedagens e 3 domínios |
+| Início | `index.html` | Apresentação do Hortus e atalhos para explorar e participar |
+| Buscar Hortas | `buscar.html` | Busca, filtros combináveis, ordenação e paginação |
+| Cadastrar Horta | `cadastrar.html` | Cadastro público da iniciativa, localização, cultivos e foto |
+| Minha Horta | `gerenciar.html` | Acesso do responsável, edição, recuperação e exclusão protegida |
+| Sobre | `sobre.html` | História, objetivo e limites do projeto |
+| Contato | `contato.html` | Informações e formulário demonstrativo |
+| Acessibilidade | `acessibilidade.html` | Recursos, verificações realizadas e limites conhecidos |
+| Privacidade | `privacidade.html` | Dados tratados e limites do protótipo |
+| Como Funciona | `como-funciona.html` | Orientações para visitantes e responsáveis |
+| Para Hortas | `para-hortas.html` | Recomendações para manter o perfil público da horta |
 
-## Tecnologias
+## Recursos
 
-- **HTML5 semântico** (`header`, `nav`, `main`, `section`, `article`, `footer`)
-- **CSS3** em folha única (`css/style.css`), com Grid, Flexbox, variáveis e media queries
-- **SVG** para ilustrações, logotipo e favicon
-- **Vídeo** MP4 (H.264) com legendas **WebVTT**, **áudio** MP3 e **mapa** do OpenStreetMap (`iframe`)
-- **Google Fonts:** Space Grotesk e DM Sans, com alternativas de sistema
-- **Sem JavaScript** nesta entrega: a validação do formulário usa apenas HTML5 nativo
+- Pesquisa textual por nome, localização e cultivo; filtros combináveis por país, região, estado/província, cidade, categoria, cultivos, participantes e forma de visita.
+- Ordenação dos resultados e paginação, com dez hortas por página.
+- Cadastro de horta com fotografia e seletores de localização e cultivo.
+- Área do responsável com código da horta e senha; recuperação por seis palavras; edição e exclusão do próprio cadastro, com confirmação.
+- Cadastros persistidos no projeto Supabase. As tabelas e funções do banco estão documentadas em `supabase/migrations/`.
+- Dados de demonstração são fictícios e identificados como demonstração. Não representam hortas reais.
+- O formulário de contato valida os campos no navegador, mas não envia mensagens.
 
-### Por que sem JavaScript?
+## Tecnologias e identidade
 
-A validação nativa do HTML5 já atende ao formulário e é anunciada corretamente por leitores de tela. Além disso, o site funciona mesmo com scripts desativados e fica mais leve. A pasta `js/` foi mantida na estrutura, com um arquivo registrando essa decisão.
+O frontend usa HTML semântico, CSS responsivo e JavaScript. O Supabase fornece persistência para os cadastros de hortas. O cliente usa uma chave publicável; nunca inclua chaves secretas ou credenciais administrativas no código do navegador.
 
-## Estrutura de pastas
+A identidade visual usa tema escuro verde, verde-lima e tons neutros, além da marca e das imagens fornecidas para o Hortus. A tipografia de títulos utiliza Impact com alternativas de sistema.
 
-```
+## Estrutura do projeto
+
+```text
 hortus/
-├── index.html
-├── sobre.html
-├── projetos.html
-├── impacto.html
-├── acessibilidade.html
-├── galeria.html
-├── midia.html
-├── noticias.html
-├── contato.html
-├── orcamento_hospedagem.html
-├── css/
-│   └── style.css
-├── js/          # sem scripts nesta entrega
-├── img/         # ilustrações e logotipo em SVG
-├── assets/      # vídeo, áudio e legendas
-└── docs/        # README, diário, orçamento e evidências de testes
+├── index.html, buscar.html, cadastrar.html, gerenciar.html, ...
+├── assets/
+│   ├── css/site.css
+│   ├── js/site.js
+│   └── img/
+├── supabase/
+│   └── migrations/
+├── docs/
+│   ├── README.md
+│   ├── uso-de-ia.md
+│   ├── diario-de-bordo.md
+│   ├── escopo-do-projeto.md
+│   ├── auditoria-wcag21-aa.md
+│   └── evidencias-testes.md
+└── entrega/
+    └── capturas/
 ```
 
-## Identidade visual
+## Executar localmente no Windows
 
-O site segue a estética **neobrutalista**: bordas pretas de 3 px, sombras duras sem desfoque, blocos levemente rotacionados e cores chapadas. É uma escolha funcional, porque limites visuais explícitos e alto contraste ajudam a legibilidade.
+1. Instale Python 3, se necessário.
+2. Abra o PowerShell nesta pasta do projeto.
+3. Execute `py -m http.server 8000`.
+4. Acesse `http://localhost:8000`.
 
-| Cor | Hex | Uso |
-|---|---|---|
-| Verde folha | `#287a4b` | Cor principal e botões |
-| Verde escuro | `#17452b` | Caules das ilustrações e apoios |
-| Verde broto | `#a9d96c` | Destaques e logotipo |
-| Creme | `#f4efdf` | Fundo padrão |
-| Creme claro | `#fffaf0` | Cabeçalho e campos |
-| Milho | `#f4c542` | Destaques e marcações |
-| Laranja colheita | `#e87845` | Etiquetas e blocos de atenção |
-| Terracota | `#c9573f` | Foco e sinalização de erro |
-| Azul água | `#8fc9c0` | Blocos de água e irrigação |
-| Rosa | `#e7a4a7` | Variação de bloco |
-| Quase preto | `#171a16` | Texto, bordas e sombras |
-| Branco quente | `#fffdf7` | Fundo de cards |
+Sirva os arquivos por HTTP; não abra com `file://`. As funções de cadastro precisam de conexão com o Supabase configurado para este projeto.
 
-## Acessibilidade
+## Publicação
 
-O site segue as **WCAG 2.1 nível AA** desde o início do desenvolvimento:
+A equipe planeja usar GitHub Pages, com o frontend publicado a partir do repositório. A ativação ainda precisa ser feita pelo administrador do repositório e a URL pública precisa ser testada. O endereço HTTPS gratuito do GitHub Pages atende ao roteiro da atividade; um domínio próprio não é necessário.
 
-- `lang="pt-BR"` em todas as páginas
-- Link "pular para o conteúdo" como primeiro elemento focável
-- Navegação completa por teclado, com foco visível de 4 px
-- `alt` descritivo em imagens informativas e `aria-hidden` em ícones decorativos
-- `label for` em todos os campos e `aria-describedby` nas dicas de preenchimento
-- `caption` e `scope` em todas as tabelas
-- Contraste de texto acima de 4,5:1 (mínimo medido: **5,28:1**)
-- `prefers-reduced-motion` respeitado
-- Testes com leitor de tela **NVDA**
+O frontend pode ser hospedado como site estático, enquanto os dados continuam no Supabase. Após ativar o Pages, confira as dez páginas, links relativos, imagens, CSS e operações de cadastro antes de divulgar a URL.
 
-## Responsividade
+## Acessibilidade e verificações
 
-| Largura | Layout |
-|---|---|
-| Acima de 950 px | Desktop, grades de 3 e 4 colunas |
-| 620 px a 950 px | Tablet, grades de 2 colunas |
-| Abaixo de 620 px | Celular, coluna única e sem rolagem horizontal |
+A auditoria axe-core registrou zero violações automatizadas nas dez páginas avaliadas. Houve também verificações manuais parciais de teclado, contraste e comportamento responsivo. Isso **não certifica conformidade completa com WCAG 2.1 AA**. A validação W3C das páginas finais, revisão completa de teclado/leitor de tela, reflow de todas as páginas e conferência na versão publicada ainda precisam ser concluídos. Consulte `docs/auditoria-wcag21-aa.md` e `docs/evidencias-testes.md`.
 
-## Sustentabilidade e desempenho
+O roteiro da atividade também pede conferência do uso de `localStorage` para rascunho ou preferência; esse ponto continua listado para confirmação em `docs/README.md`.
 
-- Site abaixo de **1 MB** somando HTML, CSS e imagens
-- Imagens em SVG, sem fotografias pesadas
-- Folha de estilo única e nenhuma dependência externa de script
-- `preload="metadata"` no vídeo, `preload="none"` no áudio e `loading="lazy"` no `iframe`
-- Hospedagem prevista em data centers de energia neutra em carbono
+## Equipe
 
-## Como executar
+Projeto acadêmico da equipe **Raiz Digital**:
 
-Não é preciso instalar nada. É um site estático.
+- Vinícius Dias Gomes
+- Guilherme de Souza Lopes dos Santos
+- Valquíria Rodrigues de Macedo
+- Pablo Henrique Lourenço Guimarães
 
-```bash
-# 1. Clone o repositório
-git clone https://github.com/<usuario>/hortus.git
+As contribuições desta versão devem ser confirmadas pelos commits de cada integrante, sem atribuir trabalho individual sem evidência.
 
-# 2. Entre na pasta
-cd hortus
+## Documentação e entrega
 
-# 3. Abra o index.html no navegador
-```
+A pasta `docs/` reúne escopo, orçamento, diário de bordo, melhorias do MVP, evidências, acessibilidade e registro de uso de IA. O registro de IA apresenta paráfrases identificadas de pedidos reais e seus resultados observados; ele não contém prompts ou resultados inventados.
 
-> A internet só é necessária para o mapa (OpenStreetMap) e para as fontes do Google Fonts. O restante funciona offline.
-
-## Fora do escopo desta entrega
-
-Previstos para as próximas fases: área autenticada, banco de dados, envio real do formulário, mapa editável de canteiros, aplicativo móvel, JavaScript e back-end.
-
-> ⚠️ **Dados fictícios:** hortas, pessoas, endereços, telefones e números de produção foram criados para fins acadêmicos. O formulário de contato valida os campos, mas **não envia** dados.
-
-## Conteúdo e créditos
-
-Todo o conteúdo é autoral: as ilustrações, o logotipo, o vídeo institucional e a vinheta em áudio foram criados pela equipe. O único conteúdo de terceiros é o mapa incorporado do **OpenStreetMap** (licença ODbL), com crédito visível na página `midia.html`.
-
-## Equipe Raiz Digital
-
-| Integrante | RGM | Páginas | Função |
-|---|---|---|---|
-| Vinícius Dias Gomes | 47441081 | `index`, `projetos` | Arquitetura, HTML semântico e integração final |
-| Guilherme de Souza Lopes dos Santos | 47475609 | `sobre`, `galeria` | CSS, identidade visual e responsividade |
-| Valquíria Rodrigues de Macedo | 47415061 | `acessibilidade`, `noticias` | Conteúdo, acessibilidade e testes com leitor de tela |
-| Pablo Henrique Lourenço Guimarães | 47672285 | `midia`, `contato`, `orcamento_hospedagem` | Mídia, orçamento de hospedagem e documentação |
-
-A página `impacto.html` foi feita em dupla por Vinícius e Valquíria.
-
-## Fluxo de trabalho
-
-- Uma **branch por integrante**, com divisão por página para evitar conflitos
-- Revisão antes de integrar na branch principal
-- Tarefas organizadas em quadro no Trello (A fazer, Em andamento, Em revisão, Concluído)
-
-## Status da Entrega 01
-
-14 dos 15 critérios de aceitação estão atendidos. O pendente é a **validação oficial no W3C Markup Validation Service**: a verificação interna não encontrou erros, e a validação oficial está prevista antes da entrega final.
-
-Mais detalhes em `docs/evidencias-testes.md`.
+O Blackboard pede, entre outros itens, URL do site, URL do repositório, apresentação, capturas PNG da página inicial em desktop e celular, ZIP do projeto e documentação atualizada. Consulte `docs/README.md` para o checklist e os pendentes. O ZIP de registros e capturas não substitui o ZIP completo do projeto.
 
 ---
 
-*Projeto acadêmico desenvolvido pela equipe Raiz Digital. São Paulo, setembro de 2026.*
+*README atualizado a partir do README inicial do repositório, no commit [`ede2a24`](https://github.com/GLope-ui/U-UNICID-CC-FRONTEND-22-N7-2-2026-NT-HORTUS/commit/ede2a249647a07d746125bfd75350531ae749b10), para refletir a versão local de dez páginas e o backend Supabase. Revisado em 6 de novembro de 2026.*
+
