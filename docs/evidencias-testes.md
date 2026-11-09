@@ -1,33 +1,42 @@
-# Evidências de revisão
+# Evidências e testes do Hortus
 
-Consulta atualizada em 27/10/2026.
+## Recursos observados na prévia local
 
-## Ajustes alinhados ao escopo
+- Busca por nome, bairro, cidade, estado, país, região, categoria, descrição e cultivos.
+- Filtros combináveis por país, região, cultivo, categoria, faixa de participantes e modo de visita; ordenação por atualização, nome e participantes.
+- Paginação: em um conjunto observado de 11 registros, a primeira página mostrou 10 e a segunda, 1.
+- Cadastro conectado ao Supabase com código da horta, senha e seis palavras de recuperação; edição, recuperação e exclusão protegida do próprio registro.
+- Formulário de contato valida os campos e informa que não envia mensagem.
+- Navegação móvel por botão, `lang="pt-BR"`, rótulos, link para pular ao conteúdo e estados de foco.
+- Registros de demonstração identificados como fictícios.
 
-- As dez páginas exigidas permanecem no menu: Início, Sobre, Projetos, Impacto, Acessibilidade, Galeria, Mídia, Notícias, Contato e Orçamento.
-- Busca e cadastro continuam como páginas complementares, sem substituir as dez páginas principais.
-- Sobre agora apresenta história, missão, visão e valores; Projetos reúne quatro frentes e uma agenda de referência; Impacto inclui uma tabela com números explicitamente demonstrativos.
-- A Galeria contém nove imagens com texto alternativo, legenda e indicação de origem.
-- Mídia inclui vídeo com controles e legendas, áudio com controles e mapa incorporado com atribuição ao OpenStreetMap.
-- Contato inclui equipe e formulário HTML5 com nome, e-mail, telefone com padrão, data, número e campos obrigatórios. O formulário valida os dados no navegador e avisa que não envia a mensagem.
-- Orçamento compara três opções de hospedagem e três domínios, com preços consultados e links para as fontes oficiais.
-- A busca combina texto, cidade, atividade, alimento, etapa e informação demonstrativa de acesso; permite ordenação e carregamento progressivo.
-- Os 50 cadastros fictícios ocupam 50 localidades em 39 cidades; os 100 anúncios estão marcados como demonstração e têm previsões a partir de novembro de 2026.
-- A navegação interna repetida da página inicial foi removida, e os links de projetos agora apontam para o diretório e para a agenda correspondentes.
-- A configuração do Firebase permanece vazia. O SDK só é carregado quando houver configuração; nesta versão não há conexão, envio de formulário nem gravação de dados.
+## Verificações locais registradas (06/11/2026)
 
-## Validações executadas
+| Verificação | Resultado observado | Limite |
+|---|---|---|
+| axe-core 4.10.3 em dez páginas, regras WCAG 2.0/2.1 A/AA | Zero violações automatizadas reportadas | Não certifica conformidade; elementos em imagem/gradiente tiveram verificações incompletas |
+| Contraste de pares sólidos principais | Pares calculados do tema acima dos mínimos AA; relatório detalhado em `auditoria-wcag21-aa.md` | Não cobre todos os estados, conteúdo dinâmico, imagens e gradientes |
+| Teclado e Narrador | Usuário informou que Tab, Shift+Tab, Enter, checkboxes e Narrador funcionaram no trecho percorrido | Não é um percurso completo em todas as páginas |
+| Busca e paginação | 11 resultados: 10 na página 1 e 1 na página 2 | Dataset observado na prévia local |
+| Filtros fixos na rolagem | Painel acompanha a rolagem em desktop e para no fim da lista | Ativo a partir de 681 px; não aplicável ao layout de uma coluna |
+| Formulários e controles | Cadastro, recuperação, setas do carrossel e alinhamento foram verificados em fluxos locais | Não representa teste exaustivo de todos os dispositivos |
+| Exclusão de horta | Função protegida disponível; exige senha e confirmação | Nenhum registro real foi excluído durante a verificação |
 
-- `npm run build`: concluído com Tailwind CSS 4.3.3.
-- `node --check`: passou para `server.js`, `js/main.js`, `js/site.mjs`, `js/firebase-client.mjs` e `js/demo-gardens.mjs`.
-- Nu Html Checker: 15 páginas HTML conferidas; zero erros ou avisos em cada página.
-- Auditoria local: 15 arquivos HTML, um `h1` por página, IDs sem repetição, imagens com `alt`, links locais e fragmentos correspondentes; todos os SVGs passaram na leitura XML.
-- Dados demonstrativos: 50 hortas, 39 cidades, 50 localidades e 100 anúncios; nenhuma previsão de colheita anterior a novembro de 2026.
-- Servidor local: `npm run serve` respondeu com HTTP 200 para as 15 páginas e para CSS, JavaScript, SVG, vídeo e áudio.
-- Firebase: configuração vazia confirmada; inicialização de autenticação retorna sem usuário e sem solicitar o SDK remoto.
+## Capturas locais disponíveis
 
-## Verificações manuais pendentes
+Em 06/11/2026, foram capturadas a homepage da versão visual atual em viewport desktop (1440 × 900) e mobile (390 × 844), em `entrega/capturas/hortus-home-desktop.png` e `entrega/capturas/hortus-home-mobile.png`. São imagens da prévia local `localhost:4174`, não da versão publicada. Depois da ativação do GitHub Pages, capturar novamente a homepage na URL HTTPS.
 
-- A inspeção visual por navegador não foi concluída: o Chrome disponível não conseguiu se conectar ao endereço local. O servidor e os arquivos responderam corretamente no teste local, mas ainda falta revisar capturas em desktop e celular.
-- Navegação com leitor de tela e teste presencial de teclado ainda precisam ser conferidos manualmente.
-- Valores de hospedagem e domínio podem mudar; confirmar as fontes oficiais antes de qualquer contratação.
+Para a comparação do MVP na apresentação, o pacote complementar também reúne capturas autênticas do único commit disponível no checkout `security-check` (`ede2a249...`, homepage em `localhost:4173`) e as capturas da versão local atual em `localhost:4174`. São dois estados de trabalho distintos; a versão atual de dez páginas com Supabase ainda não foi integrada à branch remota.
+
+## Pendências de verificação da entrega
+
+| Item | Estado | Evidência necessária |
+|---|---|---|
+| W3C Validator nas dez páginas finais | Pendente | URL e resultado de cada página |
+| Conferência da publicação HTTPS | Pendente; frontend ainda sem URL pública | Testar as dez páginas, links, CSS, imagens e recursos do Supabase |
+| Responsividade em todas as páginas | Parcial; páginas selecionadas foram medidas em larguras de celular | Reflow e zoom nas dez páginas, registrar resultados |
+| Teclado e leitor de tela | Parcial; trecho percorrido pelo usuário | Percurso das dez páginas, foco, diálogos, erros e mensagens |
+| Capturas atuais da prévia | Feito | Home desktop e celular em `entrega/capturas/`; ainda falta captura após a publicação |
+| `localStorage` de rascunho/preferência | Requisito do roteiro; conferir aderência da versão final | Registrar o fluxo observado, sem alegar que o banco Supabase o substitui |
+
+Não declarar conformidade total WCAG 2.1 AA nem aprovação W3C antes de completar as verificações pendentes.

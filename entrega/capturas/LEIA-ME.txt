@@ -1,0 +1,5 @@
+Capturas atuais da homepage local, feitas em 06/11/2026 na prévia http://localhost:4174/:
+- hortus-home-desktop.png
+- hortus-home-mobile.png
+
+As duas imagens acima correspondem ao tema escuro verde/lima e à marca de pera desta versão. São capturas locais, não da publicação HTTPS. Outras imagens antigas desta pasta podem mostrar a paleta anterior; não foram incluídas no pacote README-registros-capturas.
