@@ -1,4 +1,0 @@
-SITE PÚBLICO — GitHub Pages
-https://glope-ui.github.io/U-UNICID-CC-FRONTEND-22-N7-2-2026-NT-HORTUS/
-
-O endereço público responde atualmente. Após o merge da branch release/v2.0 para main, aguarde o Pages publicar a nova versão e confira as dez páginas, os arquivos estáticos e os cadastros Supabase.
