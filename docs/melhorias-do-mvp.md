@@ -32,5 +32,3 @@ Os itens abaixo resumem observações reais feitas pelo solicitante durante a re
 - MVP: [commit `d49e03c`](https://github.com/GLope-ui/U-UNICID-CC-FRONTEND-22-N7-2-2026-NT-HORTUS/commit/d49e03c).
 - Versão publicada: [site Hortus no GitHub Pages](https://glope-ui.github.io/U-UNICID-CC-FRONTEND-22-N7-2-2026-NT-HORTUS/).
 - As capturas em `entrega/capturas/` mostram a homepage atual em desktop e celular. Elas não são apresentadas como capturas “antes e depois” do MVP.
-
-Se a equipe tiver o feedback original do professor ou capturas autênticas do MVP, pode acrescentá-los como evidências separadas, mantendo a distinção entre avaliação oficial e comentários de uso durante o desenvolvimento.
