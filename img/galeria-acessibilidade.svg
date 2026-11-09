@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-labelledby="title desc">
-  <title id="title">Horta acessível</title><desc id="desc">Canteiro elevado, caminho livre e uma pessoa cuidando das plantas.</desc>
-  <rect width="800" height="560" fill="#f3ede4"/><circle cx="650" cy="120" r="64" fill="#ffed52"/>
-  <path d="M0 374Q190 330 380 372t420-2v190H0" fill="#d9e6c5"/>
-  <path d="M0 472h800v88H0" fill="#e6dccb"/><path d="M95 444h610" stroke="#626d66" stroke-width="9" stroke-dasharray="18 18"/>
-  <rect x="390" y="300" width="300" height="118" rx="12" fill="#6f432c"/><path d="M420 300c-18-94 33-129 76-102-4 47-28 83-76 102Zm86 0c13-95 73-110 106-75-21 43-56 69-106 75Zm93 0c-2-77 48-105 84-76-15 42-41 65-84 76Z" fill="#55dd4a" stroke="#f3ede4" stroke-width="7"/>
-  <circle cx="205" cy="255" r="36" fill="#d49b76"/><path d="M164 295q41-27 82 0l34 105h-37l-20-51-5 87h-36l-4-87-27 51h-35z" fill="#122315"/><path d="M172 404h48l-3 85h-35z" fill="#333"/><circle cx="243" cy="460" r="49" fill="none" stroke="#122315" stroke-width="12"/><circle cx="243" cy="460" r="9" fill="#122315"/><path d="M209 405h40l-1 46h-44z" fill="#55dd4a"/>
-</svg>
