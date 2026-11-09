@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-labelledby="title desc">
-  <title id="title">Uma muda nasce</title><desc id="desc">Muda verde crescendo em vaso de barro sobre uma mesa clara.</desc>
-  <rect width="800" height="560" fill="#f3ede4"/><circle cx="660" cy="118" r="74" fill="#ffed52"/><path d="M0 410c132-52 230-52 360 0s286 57 440-4v154H0z" fill="#d8e4c2"/>
-  <path d="M264 328h272l-40 160H304z" fill="#c76c45"/><ellipse cx="400" cy="327" rx="136" ry="35" fill="#9f4d35"/><ellipse cx="400" cy="319" rx="112" ry="22" fill="#60452f"/>
-  <path d="M400 318c-5-82 4-144 3-209" fill="none" stroke="#287a4b" stroke-width="18" stroke-linecap="round"/><path d="M402 180c-100-6-136-66-123-111 65-6 116 23 123 111Z" fill="#55a85b"/><path d="M406 142c59-83 125-84 157-55-29 72-80 103-157 55Z" fill="#287a4b"/><path d="M401 188c-34-51-67-67-103-68" fill="none" stroke="#17452b" stroke-width="7" stroke-linecap="round"/><path d="M410 151c24-34 50-52 81-63" fill="none" stroke="#17452b" stroke-width="7" stroke-linecap="round"/>
-  <path d="M145 117v60m-30-30h60M622 296v42m-21-21h42" stroke="#287a4b" stroke-width="8" stroke-linecap="round" opacity=".65"/><rect x="250" y="486" width="300" height="18" rx="9" fill="#17452b" opacity=".18"/>
-</svg>
