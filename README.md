@@ -36,6 +36,8 @@ Hortus é um diretório digital de hortas comunitárias. A plataforma conecta pe
 
 O Supabase armazena os cadastros das hortas. O projeto inclui a configuração do cliente em `assets/js/supabase-config.js` e as migrações do banco em `supabase/migrations/`. As credenciais de acesso são processadas por funções do banco; o frontend usa somente a chave publicável do Supabase.
 
+O formulário de cadastro salva automaticamente um rascunho dos campos públicos no `localStorage` do navegador atual. Senha, confirmação de senha, palavras de recuperação e foto não entram no rascunho. Após o cadastro ser salvo no Supabase, o rascunho local é removido.
+
 O cadastro apresenta ao responsável um código e seis palavras de recuperação. As palavras permitem redefinir a senha e são exibidas no momento da criação do cadastro.
 
 ## Tecnologias e identidade visual
